@@ -7,12 +7,12 @@ const Footer = () => {
     {
       title: "Popular Categories",
       links: [
-        { name: "Action Movies", path: "/movie?genres=action" },
-        { name: "Adventure", path: "/movie?genres=adventure" },
-        { name: "Drama", path: "/movie?genres=drama" },
-        { name: "Comedy", path: "/movie?genres=comedy" },
-        { name: "Horror", path: "/movie?genres=horror" },
-        { name: "Documentaries", path: "/movie?genres=documentary" }
+        { name: "Action Movies", path: "/movies?genres=action" },
+        { name: "Adventure", path: "/movies?genres=adventure" },
+        { name: "Drama", path: "/movies?genres=drama" },
+        { name: "Comedy", path: "/movies?genres=comedy" },
+        { name: "Horror", path: "/movies?genres=horror" },
+        { name: "Documentaries", path: "/movies?genres=documentary" }
       ]
     },
     {
