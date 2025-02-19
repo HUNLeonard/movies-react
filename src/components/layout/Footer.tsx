@@ -28,7 +28,7 @@ const Footer = () => {
       title: "Navigation",
       links: [
         { name: "Home", path: "/" },
-        { name: "All Movies", path: "/movie" },
+        { name: "All Movies", path: "/movies" },
         { name: "About Us", path: "/about" },
         { name: "Privacy Policy", path: "/" },
         { name: "Terms of Service", path: "/" }

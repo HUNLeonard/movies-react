@@ -8,7 +8,7 @@ const routes = [
   },
   {
     name: 'Movies',
-    pathname: "/movie",
+    pathname: "/movies",
     search: "",
   },
   {

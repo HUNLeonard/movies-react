@@ -21,7 +21,7 @@ const HorizontalSkeleton = ({
         )}
       >
         <Img
-          src={`../Gray.webp`}
+          src={``}
           alt={alt}
         />
       </div>

@@ -10,7 +10,7 @@ interface ImgProp {
 }
 
 const Img = ({ src, className = "", alt, title = alt, loading, hoverScale = true }: ImgProp) => {
-  const fallbackImage = "https://placehold.co/300x400?text=Failed+to+Load";
+  const fallbackImage = "../Gray.webp";
 
   return (
     <img

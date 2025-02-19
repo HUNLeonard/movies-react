@@ -24,7 +24,7 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route path="about" element={<About />}></Route>
-            <Route path="movie" element={<Movies />}></Route>
+            <Route path="movies" element={<Movies />}></Route>
             {/* <Route path="movie/:movieId" element={<Movie />}></Route> */}
             <Route path="*" element={<NoPage />} />
           </Route>
