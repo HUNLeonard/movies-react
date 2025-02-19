@@ -19,9 +19,9 @@ const App = () => {
   })
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename="/movies-react">
         <Routes>
-          <Route path="/movies-react" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route path="about" element={<About />}></Route>
             <Route path="movie" element={<Movies />}></Route>
