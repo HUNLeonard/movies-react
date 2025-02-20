@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import Layout from "./components/layout/Layout"
 import Home from "./components/pages/Home"
 import NoPage from "./components/pages/NoPage"
@@ -19,7 +19,7 @@ const App = () => {
   })
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter basename="/movies-react">
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
@@ -29,7 +29,7 @@ const App = () => {
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </QueryClientProvider>
 
   )
