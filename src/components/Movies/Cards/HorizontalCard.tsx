@@ -26,7 +26,7 @@ const HorizontalCard = ({
       {/* Movie Image */}
       <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank"
         className={cn(
-          "shrink-0 aspect-[12/16]",
+          "shrink-0 aspect-[12/16] [box-shadow:2px_5px_10px_-6px]",
           "rounded-xl lg:rounded-lg overflow-hidden flex items-center",
           imageClassName
         )}

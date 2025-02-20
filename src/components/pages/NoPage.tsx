@@ -5,7 +5,7 @@ const NoPage = () => {
   //lg:text-[clamp(780px,50vw,1024px)] 2xl:text-[1024px] 
   return (
     <main className={cn("relative mt-16 bg-neutral-800 w-full h-full overflow-hidden flex flex-col-reverse",
-      "bg-[url('../404.webp')] bg-no-repeat [background-size:cover]")}>
+      "bg-[url('../moviebg1.webp')] bg-no-repeat [background-size:cover]")}>
       <section className="max-sm:h-224 h-150 lg:h-230 max-md:mt-8">
         <div className={cn("select-none absolute w-fit",
           "text-[clamp(300px,50vw,400px)] left-1/2 -translate-x-1/2",

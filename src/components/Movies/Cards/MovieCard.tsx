@@ -16,10 +16,10 @@ const MovieCard = ({
 }) => {
 
   return (
-    <div className={cn("relative h-auto flex flex-col rounded-xl lg:rounded-lg overflow-hidden", className)}>
+    <div className={cn("relative h-auto flex flex-col pb-4", className)}>
       {/* Movie Image */}
       <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank"
-        className="w-full aspect-[3/4] md:aspect-[4/6] overflow-hidden flex items-center justify-center"
+        className="w-full aspect-[3/4] md:aspect-[4/6] overflow-hidden flex items-center justify-center rounded-t-xl lg:rounded-t-lg [box-shadow:5px_10px_15px_0px_rgba(0,0,0,0.5)]"
       >
         <Img
           src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
@@ -59,7 +59,7 @@ const MovieCard = ({
       </div>
 
       {/* Movie Title */}
-      <div className={"px-4 py-2 bg-primary-100 rounded-b-lg shadow-lg"}>
+      <div className={"px-4 py-2 bg-primary-100 rounded-b-lg [box-shadow:5px_0px_20px_-2px_rgba(0,0,0,0.5)]"}>
         <a href={`https://www.themoviedb.org/movie/${movie.id}`} target="_blank"
           className={cn("text-base xs:text-lg md:text-xl font-semibold  hover:scale-101 hover:font-bold",
             "text-black text-ellipsis line-clamp-2 transition-[scale,font-weight] duration-200")}

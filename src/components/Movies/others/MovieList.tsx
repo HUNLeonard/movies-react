@@ -18,11 +18,17 @@ const MovieList = ({
 
   return (
     <section className="relative px-2 lg:px-6">
-      <H2 className="mb-8">{title}</H2>
+
+      {/* text-shadow: 3px 3px 6px white;
+    color: var(--color-primary); */}
+      {/* text-primary [text-shadow:_3px_3px_6px_rgba(255,255,255,1)] */}
+      <div className="w-fit mb-8 bg-white/50 backdrop-blur-lg px-4 py-1 xs:px-6 xs:py-1.5 rounded-2xl shadow-md">
+        <H2>{title}</H2>
+      </div>
       <div className="relative">
         <div
           ref={scrollContainer}
-          className="relative max-w-full overflow-auto no-scrollbar scroll-smooth"
+          className="relative max-w-full overflow-x-auto !overflow-y-visible no-scrollbar scroll-smooth"
         >
           <div className="w-fit flex gap-5 ">
             <MovieCardLoader params={{ filterBy, filterValue, sorting, sortDesc } as FilterProp} />

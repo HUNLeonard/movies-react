@@ -28,9 +28,9 @@ const Select = ({
     <select
       name={name}
       className={cn(
-        "px-4 py-2 text-lg overflow-hidden outline-0 text-secondary-200",
-        "bg-primary border-2 border-black rounded-md font-semibold transition-[background-color] duration-200",
-        "hover:bg-primary-100 *:checked:bg-secondary-100 *:checked:!text-primary-200 *:checked:font-bold",
+        "px-4 py-2 text-lg overflow-hidden outline-0 text-primary font-extrabold",
+        "bg-secondary-200 border-2 border-black rounded-md transition-[background-color] duration-200",
+        "hover:bg-secondary-100 *:checked:bg-secondary-100 *:checked:!text-primary *:checked:font-bold",
         "focus-visible:outline-2",
         className,
       )}
@@ -39,7 +39,7 @@ const Select = ({
       ref={refValue}
       defaultValue={defaltValue}
     >
-      {defaultOption && <option value="" className="!text-black !font-extrabold">{placeholder}</option>}
+      {defaultOption && <option value="" className="!text-black !font-extrabold bg-secondary-300">{placeholder}</option>}
       {children}
     </select>
   );

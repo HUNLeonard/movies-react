@@ -12,6 +12,7 @@ import { objectSameUnion } from "../../utils/objectSameUnion";
 import LoadMoreButton from "../common/LoadMoreButton";
 import HorizontalLoader from "../Movies/others/HorizontalLoader";
 import AnimatedLoading from "../common/AnimatedLoading";
+import { cn } from "../../utils/cn";
 
 const Movies = () => {
   const { execute: setFilters, ...searchParams } = useMovieFilters();
@@ -58,46 +59,51 @@ const Movies = () => {
   }, []);
 
   return (
-    <main className="flex flex-col lg:flex-row max-w-[90rem] mx-auto mt-16 min-h-screen px-2 py-8 lg:px-8 gap-4 scroll-smooth">
+    <main
+      className={cn("min-h-screen scroll-smooth bg-[#d5d4e8]",
+        "bg-[url('../movies-blue.webp')] bg-repeat-y bg-contain "
+      )}>
 
       <PageButton />
       <PageButton down={true} />
-      <aside className="w-full lg:w-2/5 h-fit lg:sticky top-18">
-        <SearchForm execute={handleFilter} />
-      </aside>
+      <section className="flex flex-col lg:flex-row max-w-[90rem] mx-auto mt-16 scroll-smooth px-2 py-8 lg:px-8 gap-4 ">
+        <div className="w-full lg:w-2/5 h-fit lg:sticky top-18">
+          <SearchForm execute={handleFilter} />
+        </div>
 
-      <section className="w-full bg-primary border-4 rounded-xl border-secondary-200">
-        <HorizontalLoader
-          /* Only need to load the skeletons, when the list is empty. 
-          * Otherwise, if use "isLoading", every time I fetch, all of the prev data would turn 
-          * to skeleton wich is not wanted outcome.
-          */
-          isLoading={loadedMovies.length === 0}
-          skeletonClassName="w-full rounded-xl p-4"
-          skeletonImageClassName="min-w-24 xs:min-w-32 w-full max-w-1/8"
-          maxShowCount={20}
-        >
-          {loadedMovies.map((movie) => (
-            <div key={`${movie.id}`}>
-              <HorizontalCard
-                movie={movie}
-                className="w-full rounded-xl p-4"
-                imageClassName="min-w-24 xs:min-w-32 w-full max-w-1/8"
-                overViewClassName="!line-clamp-4"
-                imgSize="w342"
-              />
-              <hr className="w-[95%] mx-auto border-secondary-200/50" />
-            </div>
-          ))}
-        </HorizontalLoader>
-
-        <div className="w-fit m-6">
-          <LoadMoreButton
-            execute={handleAddMore}
-            disabled={!data?.hasNextPage || isLoading}
+        <div className="w-full bg-primary border-4 rounded-xl border-secondary-200 shadow-lg">
+          <HorizontalLoader
+            /* Only need to load the skeletons, when the list is empty. 
+            * Otherwise, if use "isLoading", every time I fetch, all of the prev data would turn 
+            * to skeleton wich is not wanted outcome.
+            */
+            isLoading={loadedMovies.length === 0}
+            skeletonClassName="w-full rounded-xl p-4"
+            skeletonImageClassName="min-w-24 xs:min-w-32 w-full max-w-1/8"
+            maxShowCount={20}
           >
-            {isError ? "Something went wrong :/" : !data?.hasNextPage || isLoading ? <AnimatedLoading /> : "More"}
-          </LoadMoreButton>
+            {loadedMovies.map((movie) => (
+              <div key={`${movie.id}`}>
+                <HorizontalCard
+                  movie={movie}
+                  className="w-full rounded-xl p-4"
+                  imageClassName="min-w-24 xs:min-w-32 w-full max-w-1/8"
+                  overViewClassName="!line-clamp-4"
+                  imgSize="w342"
+                />
+                <hr className="w-[95%] mx-auto border-secondary-200/50 [box-shadow:_0_0_20px_0px_rgba(0,0,0,15);]" />
+              </div>
+            ))}
+          </HorizontalLoader>
+
+          <div className="w-fit m-6">
+            <LoadMoreButton
+              execute={handleAddMore}
+              disabled={!data?.hasNextPage || isLoading}
+            >
+              {isError ? "Something went wrong :/" : !data?.hasNextPage || isLoading ? <AnimatedLoading /> : "More"}
+            </LoadMoreButton>
+          </div>
         </div>
       </section>
     </main>

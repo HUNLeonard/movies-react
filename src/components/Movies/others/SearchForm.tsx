@@ -11,6 +11,7 @@ import { cn } from "../../../utils/cn";
 
 import H3 from "../../common/H3";
 import SpanSpin from "../../common/SpanSpin";
+import { firstLetterUC } from "../../../utils/firstLetterUC";
 
 
 type SearchFormProps = {
@@ -55,10 +56,10 @@ const SearchForm = ({ execute }: SearchFormProps) => {
   const searchFormText = "Search Form".split("");
   return (
     <form onSubmit={handleSubmit}
-      className={cn("flex flex-col justify-center flex-wrap gap-2 rounded-xl",
-        "max-w-2xl mx-auto bg-secondary backdrop-blur-md p-6 border-2")}>
-      <H3 className={cn("relative !text-primary mb-4 spinString w-fit",
-        "before:w-0 before:absolute before:-bottom-1 before:left-1/2 before:h-1 before:bg-primary",
+      className={cn("flex flex-col justify-center flex-wrap gap-2 rounded-xl shadow-md",
+        "max-w-2xl mx-auto bg-primary backdrop-blur-md p-6 border-4 border-secondary-200")}>
+      <H3 className={cn("relative !text-secondary-200 mb-4 spinString w-fit",
+        "before:w-0 before:absolute before:-bottom-1 before:left-1/2 before:h-1 before:bg-secondary-200",
         "before:-translate-x-1/2 hover:before:w-full before:transition-[width] before:duration-500"
       )}>
         {searchFormText.map((char: string, index) =>
@@ -76,7 +77,7 @@ const SearchForm = ({ execute }: SearchFormProps) => {
         value={searchParams.filterValue}
         onChange={(e) => updateSearchParams('filterValue')(e.target.value)}
         placeholder="Genres"
-        className={searchParams.filterValue === "" ? "!text-black !font-extrabold" : ""}
+        className={searchParams.filterValue === "" ? "!text-black !bg-gray-300" : ""}
       >
         {Object.entries(genres).map(([name, id]) => (
           <option
@@ -94,7 +95,7 @@ const SearchForm = ({ execute }: SearchFormProps) => {
         value={searchParams.sorting}
         onChange={(e) => updateSearchParams('sorting')(e.target.value)}
         placeholder="Sort by"
-        className={searchParams.sorting === "" ? "!text-black !font-extrabold" : ""}
+        className={searchParams.sorting === "" ? "!text-black !font-extrabold !bg-gray-300" : ""}
       >
         {sortValues.map((name) => (
           <option
@@ -102,7 +103,7 @@ const SearchForm = ({ execute }: SearchFormProps) => {
             value={name}
             className="bg-primary-100 font-medium text-secondary-200"
           >
-            {name.replace(/_/g, " ")}
+            {firstLetterUC(name.replace(/_/g, " "))}
           </option>
         ))}
       </Select>
@@ -114,7 +115,7 @@ const SearchForm = ({ execute }: SearchFormProps) => {
           updateSearchParams('sortDesc')(e.target.value ?? "desc")
         }
         placeholder="Order By"
-        className={!searchParams.sortDesc ? "!text-black !font-extrabold" : ""}
+        className={!searchParams.sortDesc ? "!text-black !font-extrabold !bg-gray-300" : ""}
       >
         <option value="desc" className="bg-primary-100 font-medium text-secondary-200">
           Desc

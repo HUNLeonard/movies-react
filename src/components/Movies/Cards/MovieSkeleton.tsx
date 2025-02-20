@@ -19,7 +19,7 @@ const MovieSkeleton = ({ className = "", alt = "Loading..." }: SkeletonProp) => 
         className="w-full aspect-[3/4] md:aspect-[4/6] overflow-hidden flex items-center justify-center"
       >
         <Img
-          src={`../Gray.webp`}
+          src={location.protocol + '//' + location.host + import.meta.env.BASE_URL + "/gray.webp"}
           alt={alt}
         />
       </div>

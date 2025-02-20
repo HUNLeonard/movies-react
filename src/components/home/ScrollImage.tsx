@@ -1,3 +1,4 @@
+import { cn } from "../../utils/cn";
 import Img from "../common/Img";
 
 const MovieScrollImage = ({
@@ -20,7 +21,9 @@ const MovieScrollImage = ({
         alt={name}
         className="min-w-full [scroll-snap-align:center;]"
       />
-      <div className="absolute left-0 bottom-0 w-fit bg-white px-6 py-4 text-4xl font-bold text-ellipsis line-clamp-2 rounded-t-lg"
+      <div className={cn("absolute left-0 bottom-0 w-fit bg-white",
+        "px-6 py-4 text-2xl md:text-4xl font-bold text-ellipsis line-clamp-2 rounded-t-lg",
+        "")}
         title={name}>
         {name}
       </div>

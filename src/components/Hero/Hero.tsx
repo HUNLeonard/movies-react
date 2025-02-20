@@ -12,7 +12,8 @@ const Hero = ({ children, bg = "", className = "" }: HeroProp) => {
     <section
       className={cn(
         "min-h-64 xs:min-h-72 md:min-h-86 flex justify-center items-center",
-        "bg-secondary-200 text-center px-4 md:px-8 text-pretty relative mb-16",
+        "bg-primary-200 text-center px-4 md:px-8 text-pretty relative mb-16",
+        "bg-[url('../about-wide.webp')] bg-no-repeat bg-cover",
         className,
       )}
     >
@@ -22,7 +23,7 @@ const Hero = ({ children, bg = "", className = "" }: HeroProp) => {
 
       <p className={cn("w-fit text-transparent",
         "text-4xl xs:text-5xl md:text-6xl font-extrabold",
-        "bg-clip-text bg-linear-120 from-primary to-primary-100",
+        "bg-clip-text bg-linear-120 from-secondary-200 to-secondary-100",
         "max-w-[max(50%,72rem)] my-8 drop-shadow-[1px_1px_0px_black]")}>{children}</p>
 
     </section>

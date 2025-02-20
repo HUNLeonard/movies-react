@@ -46,7 +46,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="max-w-[90rem] mx-auto px-2 md:px-4 py-12 ">
+    <div className="max-w-[90rem] mx-auto px-2 md:px-4 py-12">
       {/* Main Footer Content */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
         {/* Brand Section */}

@@ -30,7 +30,7 @@ const HorizontalSection = ({
         ref={scrollContainer}
         className={cn(
           "relative w-full h-full bg-primary  mx-auto *:py-4 *:px-6",
-          "overflow-auto shadow-xl no-scrollbar scroll-smooth",
+          "overflow-auto shadow-2xl no-scrollbar scroll-smooth",
           className,
         )}
       >

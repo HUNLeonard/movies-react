@@ -9,7 +9,7 @@ import { cn } from "../../utils/cn";
 const ScrollSection = ({
   movies,
   className = "",
-  aspectRatio = "max-lg:aspect-[16/12]",
+  aspectRatio = "max-sm:aspect-[16/16] max-lg:aspect-[16/12]",
 }: {
   movies: MovieModel[];
   className?: string;
@@ -20,7 +20,7 @@ const ScrollSection = ({
   return (
     <div
       className={cn(
-        "relative shadow-lg mx-auto w-fit rounded-lg lg:rounded-2xl overflow-hidden",
+        "relative shadow-2xl mx-auto w-fit rounded-lg lg:rounded-2xl overflow-hidden",
         "bg-black-100 border-primary border-4",
         className,
       )}

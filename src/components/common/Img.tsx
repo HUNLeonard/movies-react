@@ -10,7 +10,8 @@ interface ImgProp {
 }
 
 const Img = ({ src, className = "", alt, title = alt, loading, hoverScale = true }: ImgProp) => {
-  const fallbackImage = "../Gray.webp";
+  var path = location.protocol + '//' + location.host + import.meta.env.BASE_URL + "/gray.webp";
+  const fallbackImage = path;
 
   return (
     <img
