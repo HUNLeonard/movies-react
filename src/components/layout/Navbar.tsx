@@ -47,10 +47,20 @@ const Navbar = () => {
   )
 }
 
+
+
 const MobilNavbar = ({ setIsOpen, isOpen }: { setIsOpen: (p: any) => void, isOpen: boolean }) => {
 
+  const handleLeave = () => {
+    const isTouchCapable = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    if (isTouchCapable) return;
+    setIsOpen(false)
+  }
+
   return (<div
-    onTouchStart={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} onMouseEnter={() => setIsOpen(true)} className={`
+    onTouchStart={() => setIsOpen((prev: boolean) => !prev)}
+    onMouseLeave={handleLeave}
+    onMouseEnter={() => setIsOpen(true)} className={`
       relative z-50 xs:hidden flex w-8 h-8 items-center group cursor-pointer
           after:absolute after:h-1 after:w-full after:top-1 after:bg-white after:transition-transform after:duration-500 ${isOpen && 'after:translate-y-2.5 after:rotate-45 before:-translate-y-2.5 before:-rotate-45'}
           before:absolute before:h-1 before:w-full before:bottom-1 before:bg-white before:transition-transform before:duration-500

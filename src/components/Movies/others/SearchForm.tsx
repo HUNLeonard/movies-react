@@ -66,6 +66,16 @@ const SearchForm = ({ execute }: SearchFormProps) => {
           <SpanSpin pos={index} key={index}>{char}</SpanSpin>
         )}
       </H3>
+      {isSearchDisabled &&
+        <div className="text-red-500 font-extrabold bg-secondary-200 px-3 py-1 rounded-2xl border-4 border-black flex flex-row flex-nowrap items-center text-pretty">
+          <div className="text-7xl leading-0 mr-3 select-none">!</div>
+          <span>Unfortunatly you can't
+            <span className="text-black">&nbsp;Filter&nbsp;</span> / <span className="text-black">&nbsp;Sort</span>
+            &nbsp;AND&nbsp;
+            <span className="text-black">Search&nbsp;</span>
+            in titles at the same time.</span>
+          <div className="text-7xl leading-0 ml-3 select-none">!</div>
+        </div>}
       <SearchInput
         value={searchParams.search ?? ""}
         disabled={isSearchDisabled}
